@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="navapp.HomePage"
+             Title="HomePage">
+    <StackLayout>
+      
+        <StackLayout BackgroundColor="#2196F3" Padding="10" HorizontalOptions="FillAndExpand">
+            <Label Text="Book Management System" TextColor="White" FontSize="24" HorizontalOptions="Center" />
+        </StackLayout>
+ 
+        <StackLayout Padding="20" Spacing="20">
+           
+            <Label Text="Welcome to the Book Management System!" FontSize="20" HorizontalOptions="Center" />
+
+            <Image Source="book.png" 
+       Aspect="AspectFit" 
+       HorizontalOptions="Center" 
+       VerticalOptions="CenterAndExpand"
+       HeightRequest="200" 
+       WidthRequest="200" />
+            <Button Text="Add Book" Clicked="AddBook_Clicked" />
+
+
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

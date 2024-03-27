@@ -1,0 +1,1 @@
+C:\Users\Lakshmidurga\source\repos\navapp\navapp\navapp.csproj;x64

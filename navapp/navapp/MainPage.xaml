@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             x:Class="navapp.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="10">
+            <StackLayout Padding="10">
+                <Entry x:Name="titleEntryField" Placeholder="Title"/>
+                <Entry x:Name="authorEntryField" Placeholder="Author"/>
+                <Entry x:Name="genreEntryField" Placeholder="Genre"/>
+                <DatePicker x:Name="publishDatePicker" MaximumDate="{x:Static sys:DateTime.Now}" />
+                <Editor x:Name="descriptionEditor" Placeholder="Description"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20">
+                <Button x:Name="saveButton" Text="Save" Clicked="saveButton_Clicked"/>
+                <Button x:Name="Home" Text="Go To Home Page" Clicked="Home_Clicked"/>
+            </StackLayout>
+
+            <ListView x:Name="listView" FlexLayout.Grow="1" HasUnevenRows="True" ItemTapped="listView_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame BorderColor="DarkGray" CornerRadius="5" Margin="5">
+                                <StackLayout Padding="10" Spacing="5">
+                                    <Label Text="{Binding Title}" FontSize="17" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Author}" FontAttributes="Italic"/>
+                                    <Label Text="{Binding Genre}" FontAttributes="Italic"/>
+                                    <Label Text="{Binding PublishDate, StringFormat='{0:d}'}" FontAttributes="Italic"/>
+                                    <Label Text="{Binding Description}" FontAttributes="Italic"/>
+                                    
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" Spacing="10">
+                                        <Button Text="Delete" Clicked="DeleteButton_Clicked"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
